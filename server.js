@@ -1,8 +1,9 @@
 require("./db/db");
 const app = require("./app");
 const chalk = require("chalk");
-const { PORT } = require("./config");
-const cors = require('cors')
+const config = require("./config");
+const cors = require("cors");
+const PORT = process.env.PORT || config.PORT;
 
 app.use(
   cors({
